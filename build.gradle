@@ -44,7 +44,7 @@ task assembleArtifact(type: Zip, group: 'DB') {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact source: assembleArtifact, extension: 'zip'
+            artifact source: build, extension: 'jar'
         }
     }
     repositories {
