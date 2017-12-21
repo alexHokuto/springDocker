@@ -31,20 +31,13 @@ group = 'com.firstfewlines.sample'
 repositories {
     maven { url "http://192.168.1.222:8081/repository/SAMPLE-SNAP/" }
 }
-/*
-task assembleArtifact(type: Zip, group: 'DB') {
-    archiveName 'db.zip'
-    destinationDir file("$buildDir/libs/")
-    from "src/main/sql"
-    description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
-}
-*/
+
 
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact source: '/var/lib/jenkins/workspace/spring-demo/build/libs/spring-demo-1.0.0.jar', extension: 'jar'
+           artifact jarToPublish
         }
     }
     repositories {
