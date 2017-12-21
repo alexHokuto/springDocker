@@ -48,8 +48,8 @@ publishing {
       def elRepo = 'http://192.168.1.222:8081/repository/SAMPLE-SNAP/'
       url elRepo
       credentials {
-        username admin
-        password admin123
+        username 'admin'
+        password 'admin123'
       }
     }
   }
