@@ -5,8 +5,8 @@ plugins {
 }
 
 
-//archivesBaseName = 'spring-demo'
-//version = '0.0.1-SNAPSHOT'
+archivesBaseName = 'spring-demo'
+version = '0.0.1-SNAPSHOT'
 
 repositories {
     jcenter()
@@ -21,25 +21,44 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: "base"
 apply plugin: "maven"
-
+apply plugin: "maven-publish"
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
 version = '1.0.0'
 group = 'com.firstfewlines.sample'
 
-uploadArchives {
+repositories {
+    maven { url defaultRepository }
+}
+
+task assembleArtifact(type: Zip, group: 'DB') {
+    archiveName 'db.zip'
+    destinationDir file("$buildDir/libs/")
+    from "src/main/sql"
+    description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact source: assembleArtifact, extension: 'zip'
+        }
+    }
     repositories {
-        mavenDeployer {
-            repository(url: "http://192.168.1.222:8081/repository/SAMPLE-SNAP/") {
-                authentication(userName: "admin", password: "admin123")
-                pom.groupId = "com.beesightsoft.caf"
-                pom.artifactId = "rx"
-                pom.version = '2.0.0'
+        maven {
+            credentials {
+                username nexusUsername
+                password nexusPassword
             }
+            url nexusRepo
         }
     }
 }
+
+assemble.dependsOn assembleArtifact
+   build.dependsOn assemble
+ publish.dependsOn build
 
 
 
