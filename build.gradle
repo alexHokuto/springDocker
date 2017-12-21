@@ -23,10 +23,6 @@ publishing {
     mavenJava(MavenPublication) {
       from components.java
 
-      sourceJar {
-        classifier 'sources'
-      }
-
       //Pone las dependencias en scope 'compile'
       pom.withXml {
         asNode().dependencies.'*'.findAll() {
