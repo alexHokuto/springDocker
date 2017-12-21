@@ -5,8 +5,8 @@ plugins {
 }
 
 
-archivesBaseName = 'spring-demo'
-version = '0.0.1-SNAPSHOT'
+//archivesBaseName = 'spring-demo'
+//version = '0.0.1-SNAPSHOT'
 
 repositories {
     jcenter()
@@ -19,7 +19,6 @@ dependencies {
 
 apply plugin: 'groovy'
 apply plugin: 'java'
-apply plugin: 'maven-publish'
 apply plugin: "base"
 apply plugin: "maven"
 
