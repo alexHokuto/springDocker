@@ -20,17 +20,21 @@ dependencies {
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
-apply plugin: 'com.bmuschko.nexus'
+
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
 version = '1.0.0'
 group = 'com.firstfewlines.sample'
 
+ext {
+    jarToPublish = file( 'build/libs/spring-demo-1.0.0.jar' )
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from components.java
+             artifact jarToPublish
         }
     }
 }
@@ -38,11 +42,12 @@ publishing {
 publishing {
     repositories {
         maven {
+        url "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
             credentials {
                 username 'admin'
                 password 'admin123'
             }
-            url "$buildDir/http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
+            
         }
     }
 }
