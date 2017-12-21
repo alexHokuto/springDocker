@@ -48,8 +48,8 @@ publishing {
     repositories {
         maven {
             credentials {
-                username nexusUsername
-                password nexusPassword
+                username 'admin'
+                password 'admin123'
             }
             url nexusRepo
         }
