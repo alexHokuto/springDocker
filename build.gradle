@@ -51,7 +51,7 @@ publishing {
             artifactId 'sample'
             version '2.1.4'
 
-            artifact 'sample.jar'
+            artifact 'build/libs/spring-demo-1.0.0.jar'
             pom.withXml {
                 def dependencies = asNode().appendNode('dependencies')
                 
