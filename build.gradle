@@ -44,7 +44,7 @@ task assembleArtifact(type: Zip, group: 'DB') {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifact source: build, extension: 'jar'
+            artifact source: '/var/lib/jenkins/workspace/spring-demo/build/libs/spring-demo-1.0.0.jar', extension: 'jar'
         }
     }
     repositories {
