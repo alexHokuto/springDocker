@@ -4,6 +4,8 @@ plugins {
     id 'eclipse'
 }
 
+apply plugin: 'maven-publish'
+
 archivesBaseName = 'spring-demo'
 version = '0.0.1-SNAPSHOT'
 
@@ -14,3 +16,42 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
 }
+
+publishing {
+  publications {
+    mavenJava(MavenPublication) {
+      from components.java
+
+      artifact sourceJar {
+        classifier 'sources'
+      }
+      /*artifact javadocJar {
+        classifier "javadoc"
+      }*/
+      //Pone las dependencias en scope 'compile'
+      pom.withXml {
+        asNode().dependencies.'*'.findAll() {
+          it.scope.text() == 'runtime' && project.configurations.compile.allDependencies.find { dep ->
+            dep.name == it.artifactId.text()
+          }
+        }.each() {
+          it.scope*.value = 'compile'
+        }
+      }
+    }
+  }
+}
+
+publishing {
+  repositories {
+    maven {
+      def elRepo = http://192.168.1.222:8081/repository/SAMPLE-SNAP/
+      url elRepo
+      credentials {
+        username admin
+        password admin123
+      }
+    }
+  }
+}
+
