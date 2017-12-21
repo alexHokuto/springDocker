@@ -1,0 +1,16 @@
+plugins {
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
+    id 'java'
+    id 'eclipse'
+}
+
+archivesBaseName = 'spring-demo'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+}
