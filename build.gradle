@@ -25,35 +25,6 @@ apply plugin: "maven-publish"
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
-version = '1.0.0'
-group = 'com.firstfewlines.sample'
-
-repositories {
-    maven { url "http://192.168.1.222:8081/repository/SAMPLE-SNAP/" }
-}
-
-
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-           artifact jarToPublish
-        }
-    }
-    repositories {
-        maven {
-            credentials {
-                username 'admin'
-                password 'admin123'
-            }
-            url 'http://192.168.1.222:8081/repository/SAMPLE-SNAP/'
-        }
-    }
-}
-
-//assemble.dependsOn assembleArtifact
-//   build.dependsOn assemble
- publish.dependsOn build
 
 
 
