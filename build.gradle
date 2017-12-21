@@ -39,12 +39,7 @@ task assembleArtifact(type: Zip, group: 'DB') {
     description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
 }
 */
-task assembleArtifact(type: jar, group: 'DB') {
-    archiveName 'spring-demo-1.0.0.jar'
-    destinationDir file("$buildDir/libs/")
-    from "src"
-    description "Assemble archive $archiveName into ${relativePath(destinationDir)}"
-}
+
 
 publishing {
     publications {
@@ -63,8 +58,8 @@ publishing {
     }
 }
 
-assemble.dependsOn assembleArtifact
-   build.dependsOn assemble
+//assemble.dependsOn assembleArtifact
+//   build.dependsOn assemble
  publish.dependsOn build
 
 
