@@ -20,6 +20,8 @@ dependencies {
 apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'maven-publish'
+apply plugin: "base"
+apply plugin: "maven"
 
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
@@ -27,31 +29,18 @@ def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 version = '1.0.0'
 group = 'com.firstfewlines.sample'
 
-ext {
-    jarToPublish = file( '/var/lib/jenkins/workspace/spring-demo/build/libs/spring-demo-1.0.0.jar' )
-}
-
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-             artifact jarToPublish
-        }
-    }
-}
-
-publishing {
+uploadArchives {
     repositories {
-        maven {
-        url "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
-            credentials {
-                username 'admin'
-                password 'admin123'
+        mavenDeployer {
+            repository(url: "http://192.168.1.222:8081/repository/SAMPLE-SNAP/") {
+                authentication(userName: "admin", password: "admin123")
+                pom.groupId = "com.beesightsoft.caf"
+                pom.artifactId = "rx"
+                pom.version = '2.0.0'
             }
-            
         }
     }
 }
-
 
 
 
