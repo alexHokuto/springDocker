@@ -48,12 +48,6 @@ publishing {
             mavenJava(MavenPublication) {
               from components.java
 
-              sourceJar {
-                classifier 'sources'
-              }
-              /*artifact javadocJar {
-                classifier "javadoc"
-              }*/
               //Pone las dependencias en scope 'compile'
               pom.withXml {
                 asNode().dependencies.'*'.findAll() {
