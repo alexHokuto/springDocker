@@ -22,7 +22,10 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
       from components.java
-
+            groupId 'com.firstfewlines.sample'
+            artifactId 'sample'
+            version '2.1.4'
+            
       //Pone las dependencias en scope 'compile'
       pom.withXml {
         asNode().dependencies.'*'.findAll() {
@@ -49,17 +52,17 @@ publishing {
               }
             }
       }
-      
+      /*
       publications {
         // This will only be enabled on Dev
         MyDevJar(MavenPublication) {
             artifactId "test"
             version "1.0"
             groupId "org.example"
-           // artifact file('abc')
-           // ext.repo = 'Dev'
+            artifact file('abc')
+            ext.repo = 'Dev'
         }
       }
-
+*/
 }
 
