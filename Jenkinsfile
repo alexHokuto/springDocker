@@ -6,7 +6,7 @@ node {
   
   try {
    // String command = './gradlew clean build'
-    String command = 'gradle clean build'
+    String command = 'gradle clean build --stacktrace'
     sh command
   } catch(err) {
     throw err
