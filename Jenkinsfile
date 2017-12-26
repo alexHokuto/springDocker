@@ -14,7 +14,7 @@ node {
 
   stage 'Archive'
 
-  step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/test/TEST-*.xml'])
+ // step([$class: 'JUnitResultArchiver', testResults: '**/build/test-results/test/TEST-*.xml'])
   step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 
   step([$class: 'JacocoPublisher'])
