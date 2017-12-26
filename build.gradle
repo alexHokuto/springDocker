@@ -103,23 +103,6 @@ publishing {
 }
 
 
-checkstyle {
-  ignoreFailures = true
-  showViolations = false
-  toolVersion = '7.4'
-}
-
-tasks.withType(Checkstyle) {
-  reports {
-    ext.env = System.getenv()
-    ext.buildNumber = env.BUILD_NUMBER?.toInteger() ?: 0
-
-    boolean enabledXml = ext.buildNumber > 0
-    xml.enabled enabledXml
-    html.enabled !enabledXml
-  }
-}
-
 
 
 
