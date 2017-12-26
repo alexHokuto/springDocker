@@ -5,7 +5,8 @@ node {
   stage "Build"
   
   try {
-    String command = './gradlew clean build'
+   // String command = './gradlew clean build'
+    String command = 'gradle clean build''
     sh command
   } catch(err) {
     throw err
