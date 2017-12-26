@@ -7,7 +7,7 @@ plugins {
 
 archivesBaseName = 'spring-demo'
 version = '0.0.1-SNAPSHOT'
-group = 'tecnologia3.arquitectura02'
+group = 'tecnologia3.arquitectura03'
 
 repositories {
     jcenter()
@@ -70,6 +70,7 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
        from components.java
+       artifact springDemo.jar
 
       artifact sourceJar {
         classifier 'sources'
