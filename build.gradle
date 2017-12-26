@@ -24,13 +24,13 @@ apply plugin: "base"
 apply plugin: "maven"
 apply plugin: "maven-publish"
 
-apply plugin: 'idea'
+//apply plugin: 'idea'
 apply plugin: 'eclipse'
-apply plugin: 'jacoco'
-apply plugin: 'findbugs'
+////apply plugin: 'jacoco'
+//apply plugin: 'findbugs'
 //apply plugin: 'checkstyle'
-apply plugin: 'jdepend'
-apply plugin: 'pmd'
+//apply plugin: 'jdepend'
+//apply plugin: 'pmd'
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 group = 'tecnologia3.arquitectura'
