@@ -22,10 +22,6 @@ node {
   step([$class: 'CheckStylePublisher', pattern: '**/checkstyle/*.xml'])
   step([$class: 'PmdPublisher', pattern: '**/pmd/*.xml'])
   step([$class: 'PragprogBuildStep', displayLanguageCode: 'en', indicateBuildResult: true])
-
-  String command = 'gradle publish'
-  sh command
-
   
   
 }
