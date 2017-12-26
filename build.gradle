@@ -23,6 +23,17 @@ apply plugin: "base"
 apply plugin: "maven"
 apply plugin: "maven-publish"
 
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'com.github.ben-manes.versions'
+apply plugin: 'jacoco'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'jdepend'
+apply plugin: 'pmd'
+apply plugin: 'net.researchgate.release'
+apply plugin: 'org.sonarqube'
+
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
 
