@@ -70,7 +70,7 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
        from components.java
-       artifact springDemo.jar
+       artifact 'springDemo.jar'
 
       artifact sourceJar {
         classifier 'sources'
