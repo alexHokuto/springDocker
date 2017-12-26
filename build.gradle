@@ -70,7 +70,6 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
        from components.java
-       artifact '/var/lib/jenkins/workspace/spring-demo01_master-GWU4WJHJ76UK7HN7HACPTJB2WDVGFW5PIWOGYUU4DVFUBPXMC6VA/build/libs/spring-demo-0.0.1-SNAPSHOT.jar'
 
       artifact sourceJar {
         classifier 'sources'
