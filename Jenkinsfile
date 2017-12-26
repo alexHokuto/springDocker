@@ -5,7 +5,7 @@ node {
   stage "Build"
   
   try {
-    String command = './gradlew clean build'
+    String command = './gradlew clean build publish'
    // String command = 'gradle clean build --stacktrace'
     sh command
   } catch(err) {
