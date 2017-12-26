@@ -23,4 +23,13 @@ node {
   step([$class: 'PmdPublisher', pattern: '**/pmd/*.xml'])
   step([$class: 'PragprogBuildStep', displayLanguageCode: 'en', indicateBuildResult: true])
 
+    try {
+   // String command = './gradlew clean build'
+    String command = 'gradle publish'
+    sh command
+  } catch(err) {
+    throw err
+  }
+  
+  
 }
