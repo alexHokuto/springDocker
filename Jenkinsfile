@@ -18,10 +18,10 @@ node {
   step([$class: 'ArtifactArchiver', artifacts: '**/build/libs/*.jar', fingerprint: true])
 
  // step([$class: 'JacocoPublisher'])
-  step([$class: 'FindBugsPublisher', pattern: '**/findbugs/*.xml'])
+//  step([$class: 'FindBugsPublisher', pattern: '**/findbugs/*.xml'])
  // step([$class: 'CheckStylePublisher', pattern: '**/checkstyle/*.xml'])
-  step([$class: 'PmdPublisher', pattern: '**/pmd/*.xml'])
-  step([$class: 'PragprogBuildStep', displayLanguageCode: 'en', indicateBuildResult: true])
+//  step([$class: 'PmdPublisher', pattern: '**/pmd/*.xml'])
+ // step([$class: 'PragprogBuildStep', displayLanguageCode: 'en', indicateBuildResult: true])
   
   
 }
