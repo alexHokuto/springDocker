@@ -16,6 +16,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
 }
 
+import java.text.SimpleDateFormat
 
 apply plugin: 'groovy'
 apply plugin: 'java'
