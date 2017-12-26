@@ -33,7 +33,7 @@ apply plugin: 'eclipse'
 //apply plugin: 'pmd'
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
-group = 'tecnologia3.arquitectura'
+//group = 'tecnologia3.arquitectura'
 
 Date buildTimeAndDate = new Date()
 ext {
@@ -64,6 +64,9 @@ task sourceJar(type: Jar) {
 publishing {
   publications {
     mavenJava(MavenPublication) {
+        groupId 'tecnologia3.arquitectura01'
+        artifactId 'spring-demo'
+        version '1.1'
       from components.java
 
       artifact sourceJar {
