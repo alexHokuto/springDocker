@@ -26,7 +26,7 @@ apply plugin: "maven-publish"
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
 version = '1.0.0'
-group = 'com.firstfewlines.sample'
+group = 'com.proyect.sample'
 
 publishing {
     repositories {
@@ -43,7 +43,7 @@ publishing {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId 'com.firstfewlines.sample'
+            groupId 'com.proyect.sample'
             artifactId 'sample'
             version '2.1.4'
 
