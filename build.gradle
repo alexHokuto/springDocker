@@ -28,6 +28,46 @@ def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
 
 
 
+def repoUrl = "http://artifactory.firstfewlines.com:8081/artifactory"
 
+version = '1.0.0'
+group = 'com.firstfewlines.sample'
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username 'admin'
+                password 'admin123'
+            }
+            url "${repoUrl}/release"
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.firstfewlines.sample'
+            artifactId 'sample'
+            version '2.1.4'
+
+            artifact 'sample.jar'
+            pom.withXml {
+                def dependencies = asNode().appendNode('dependencies')
+                
+                def d = dependencies.appendNode('dependency')
+                d.appendNode('groupId', 'org.apache.httpcomponents')
+                d.appendNode('artifactId', 'httpclient')
+                d.appendNode('version', '4.3.6')
+                                
+                d = dependencies.appendNode('dependency')
+                d.appendNode('groupId', 'org.apache.httpcomponents')
+                d.appendNode('artifactId', 'httpcore')
+                d.appendNode('version', '4.3.3')
+            }
+        }
+    }
+}
 
 
