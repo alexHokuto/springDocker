@@ -28,7 +28,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'jacoco'
 apply plugin: 'findbugs'
-apply plugin: 'checkstyle'
+//apply plugin: 'checkstyle'
 apply plugin: 'jdepend'
 apply plugin: 'pmd'
 
