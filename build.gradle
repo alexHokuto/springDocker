@@ -33,7 +33,7 @@ apply plugin: 'jdepend'
 apply plugin: 'pmd'
 
 def repoUrl = "http://192.168.1.222:8081/repository/SAMPLE-SNAP/"
-
+group = 'tecnologia3.arquitectura'
 
 Date buildTimeAndDate = new Date()
 ext {
